@@ -4,7 +4,7 @@ import React from 'react';
 import { AbBotao, AbBotaoProps } from '../src';
 
 export default {
-  title: 'Componentes/AbBotao',
+  title: 'Componentes/AbBotoa',
   component: AbBotao,
 } as ComponentMeta<typeof AbBotao>;
 
