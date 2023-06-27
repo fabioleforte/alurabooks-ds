@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const SectionEstilizada = styled.section<{ selecionado: boolean }>`
   width: 194px;
   height: 88px;
   background: ${props =>
     props.selecionado
-      ? 'linear-gradient(97.54deg, #002f52 35.49%, #326589 165.37%)'
-      : '#fff'};
+      ? 'linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%)'
+      : '#FFFFFF'};
   border: 1px solid;
-  border-color: ${props => (props.selecionado ? '#002f52' : '#eb9b00')};
+  border-color: ${props => (props.selecionado ? '#002F52' : '#EB9B00')};
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -19,22 +19,19 @@ const SectionEstilizada = styled.section<{ selecionado: boolean }>`
   font-family: sans-serif;
   cursor: pointer;
   header {
-    color: ${(props: any) => (props.selecionado ? '#fff' : '#eb9b00')};
+    color: ${props => (props.selecionado ? '#FFF' : '#EB9B00')};
     font-size: 12px;
     font-weight: 400;
   }
   strong {
-    color: ${(props: any) => (props.selecionado ? '#fff' : '#eb9b00')};
-    font-size: 16px;
+    color: ${props => (props.selecionado ? '#FFF' : '#EB9B00')};
     font-weight: 700;
+    font-size: 16px;
   }
-
   footer {
-    color: ${(props: any) =>
-      props.selecionado ? '#fff' : 'rgba(0, 0, 0, 0.5)'};
-
+    color: ${props => (props.selecionado ? '#FFF' : 'rgba(0, 0, 0, 0.54)')};
+    font-weight: 400;
     font-size: 12px;
-    font-weight: 600;
   }
 `;
 
@@ -50,23 +47,25 @@ export interface AbGrupoOpcoesProps {
   valorPadrao?: AbGrupoOpcao | null;
   onChange?: (opcao: AbGrupoOpcao) => void;
 }
-export const AbGrupoOpcoes: React.FC<AbGrupoOpcoesProps> = ({
+
+export const AbGrupoOpcoes = ({
   opcoes,
   onChange,
   valorPadrao,
-}) => {
+}: AbGrupoOpcoesProps) => {
   const [selecao, setSelecao] = useState<AbGrupoOpcao | null>(
     valorPadrao ?? null
   );
-  const aoSelecionar = (opcao: AbGrupoOpcao) => {
+  const aoSelecionar = (opcao: AbGrupoOpcao): void => {
     setSelecao(opcao);
     if (onChange) {
       onChange(opcao);
     }
   };
+
   return (
     <>
-      {opcoes.map((opcao: AbGrupoOpcao) => (
+      {opcoes.map(opcao => (
         <SectionEstilizada
           onClick={() => aoSelecionar(opcao)}
           key={opcao.id}
