@@ -16,5 +16,6 @@ export const Thing: FC<Props> = ({ children }) => {
 export * from './componentes/AbBotao';
 export * from './componentes/AbGrupoDeOpcoes';
 export * from './componentes/AbTag';
+export * from './componentes/CampoTexto';
 export * from './componentes/Card';
 export * from './componentes/InputQuantidade';
