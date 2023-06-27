@@ -17,3 +17,4 @@ export * from './componentes/AbBotao';
 export * from './componentes/AbGrupoDeOpcoes';
 export * from './componentes/AbTag';
 export * from './componentes/Card';
+export * from './componentes/InputQuantidade';
