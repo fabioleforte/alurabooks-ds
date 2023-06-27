@@ -57,7 +57,7 @@ export const AbGrupoOpcoes = ({
   const [selecao, setSelecao] = useState<AbGrupoOpcao | null>(
     valorPadrao ?? null
   );
-  const aoSelecionar = (opcao: AbGrupoOpcao): void => {
+  const aoSelecionar = (opcao: AbGrupoOpcao) => {
     setSelecao(opcao);
     if (onChange) {
       onChange(opcao);
@@ -65,7 +65,7 @@ export const AbGrupoOpcoes = ({
   };
   return (
     <>
-      {opcoes.map(opcao => (
+      {opcoes.map((opcao: AbGrupoOpcao) => (
         <SectionEstilizada
           onClick={() => aoSelecionar(opcao)}
           key={opcao.id}
